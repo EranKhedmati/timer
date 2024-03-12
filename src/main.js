@@ -13,7 +13,7 @@ function createWindow() {
       contextIsolation: false,
     },
   });
-
+  win.webContents.openDevTools()
   win.loadFile(path.join(__dirname, "./index.html"));
 }
 
@@ -38,3 +38,11 @@ ipcMain.on("fullscreen", (event, frame) => {
   win.setResizable(frame);
   win.setFullScreenable(frame);
 });
+
+ipcMain.on("quit", (event, data)=>{
+  app.quit();
+})
+
+ipcMain.on("minimize", (event,data)=>{
+  win.minimize();
+})
