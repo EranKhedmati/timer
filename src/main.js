@@ -13,7 +13,7 @@ function createWindow() {
       contextIsolation: false,
     },
   });
-  win.webContents.openDevTools()
+  win.webContents.openDevTools();
   win.loadFile(path.join(__dirname, "./index.html"));
 }
 
@@ -31,18 +31,17 @@ app.on("activate", () => {
   }
 });
 
-ipcMain.on("fullscreen", (event, frame) => {
-  win.maximize();
-  win.setMenuBarVisibility(!frame);
-  win.setAutoHideMenuBar(frame);
-  win.setResizable(frame);
-  win.setFullScreenable(frame);
+ipcMain.on("fs", (event) => {
+  if (win.isMaximized()) {
+    win.unmaximize();
+  } else {
+    win.maximize();
+  }
+});
+ipcMain.on("quit", (event, data) => {
+  app.quit();
 });
 
-ipcMain.on("quit", (event, data)=>{
-  app.quit();
-})
-
-ipcMain.on("minimize", (event,data)=>{
+ipcMain.on("minimize", (event, data) => {
   win.minimize();
-})
+});
