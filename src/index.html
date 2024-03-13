@@ -9,14 +9,37 @@
 </head>
 <body>
   <div class="App">
+    <!-- Navbar -->
     <nav class="navbar w-full bg-gray-800 flex align-middle">
       <button id="fs" class="px-5"><img src="../public/img/fullscreen.svg" alt="full screen"></button>
       <div class="w-full" style="-webkit-app-region: drag;"></div>
       <button id="minimize" class="w-10 px-3  ml-auto hover:bg-gray-700"><img src="../public/img/-.svg" alt="-"></button>
       <button id="quit" class="w-12 p-2 hover:bg-gray-700"><img class="w-5" src="../public/img/x.svg" alt="x"></button>
     </nav>
+
+    <!-- Timer -->
+    <div class="timer h-full">
+      <div class="counter text-7xl text-center mt-32">
+        00:00
+      </div>
+      <ul class="flex align-middle justify-center gap-5 mt-20">
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="30">+0:30</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="1">+1</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="5">+5</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="10">+10</li>
+      </ul>
+      <ul class="flex align-middle justify-center gap-5 mt-10">
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="30">-0:30</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="1">-1</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="5">-5</li>
+        <li class="bg-gray-400 w-12 h-7 flex align-middle justify-center rounded text-white cursor-pointer" id="10">-10</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- Script -->
   <script src="../public/script/script.js"></script>
+  <!-- Timer -->
+  <script src="../public/script/timer.js"></script>
 </body>
 </html>
